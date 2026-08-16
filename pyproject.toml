@@ -2,14 +2,32 @@
 name = "hermes-discord-thread-first-channels"
 version = "1.0.0"
 description = "Mention-free Discord channels that retain Hermes auto-threading"
+readme = "README.md"
 requires-python = ">=3.11"
-license = { text = "Apache-2.0" }
-authors = [{ name = "vforge-coder" }]
-keywords = ["hermes", "discord", "threads", "routing", "plugin"]
+license = "Apache-2.0"
+authors = [{ name = "vforge-labs" }]
+keywords = ["hermes-agent", "discord", "threads", "routing", "plugin"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: Apache Software License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3.11",
+    "Topic :: Communications :: Chat",
+]
+
+[project.urls]
+Homepage = "https://github.com/vforge-labs/hermes-discord-thread-first-channels"
+Repository = "https://github.com/vforge-labs/hermes-discord-thread-first-channels"
+Issues = "https://github.com/vforge-labs/hermes-discord-thread-first-channels/issues"
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
+addopts = "-q --strict-markers"
 
 [tool.ruff]
 target-version = "py311"
-line-length = 100
+line-length = 120
+
+[tool.ruff.lint]
+select = ["E", "F", "I"]

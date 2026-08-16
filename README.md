@@ -66,11 +66,16 @@ The event-local state uses Python `ContextVar`, so concurrent target and non-tar
 - Unconfigured installations remain inert.
 - Existing sender authorization and allowed-channel gates remain in force.
 
-## Verification
+See [`docs/security-model.md`](docs/security-model.md) for the detailed boundary model.
+
+## Development and verification
+
+Clone the repository beside a compatible Hermes Agent checkout, create a virtual environment, and install the same harness used by the other VForge Labs plugins:
 
 ```bash
-python -m unittest discover -s tests -v
-python -m py_compile __init__.py tests/test_thread_first.py
+python -m pip install --upgrade pytest ruff
+python -m pytest
+ruff check .
 ```
 
 ## Compatibility

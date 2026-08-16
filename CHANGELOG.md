@@ -1,6 +1,10 @@
 # Changelog
 
-All notable changes to this project are documented here.
+All notable changes to this project will be documented here.
+
+The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and releases use [Semantic Versioning](https://semver.org/).
+
+## [Unreleased]
 
 ## [1.0.0] - 2026-08-16
 
@@ -10,4 +14,8 @@ All notable changes to this project are documented here.
 - Mention-free ingress while preserving Hermes auto-threading.
 - Parent-policy inheritance for child threads.
 - Context-local isolation for concurrent Discord events.
-- Standard-library unit tests and public installation documentation.
+- Pytest and Ruff harness for configuration, routing, inheritance, inert defaults, and concurrency.
+- Repository security policy, contribution guide, maintainer invariants, focused security-model documentation, and Dependabot configuration.
+
+[Unreleased]: https://github.com/vforge-labs/hermes-discord-thread-first-channels/compare/v1.0.0...HEAD
+[1.0.0]: https://github.com/vforge-labs/hermes-discord-thread-first-channels/releases/tag/v1.0.0

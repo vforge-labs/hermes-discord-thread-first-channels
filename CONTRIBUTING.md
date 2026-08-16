@@ -1,17 +1,36 @@
 # Contributing
 
-Contributions are welcome.
+Contributions are welcome, especially compatibility fixes for newer Hermes Agent Discord adapters and additional routing-isolation tests.
 
-1. Fork the repository and create a focused branch.
-2. Keep the plugin profile-local and avoid Hermes core patches.
-3. Do not commit Discord tokens, real guild/channel/user IDs, private hostnames, or runtime state.
-4. Run:
+## Ground rules
 
-   ```bash
-   python -m unittest discover -s tests -v
-   python -m py_compile __init__.py tests/test_thread_first.py
-   ```
+- Never include real Discord IDs, message content, profile paths, tokens, logs, or `$HERMES_HOME` contents in issues, fixtures, or commits.
+- Preserve existing sender and channel authorization gates.
+- Keep configured channels out of Hermes `free_response_channels` so the normal auto-thread path remains active.
+- Use context-local event state; concurrent messages must not leak routing policy.
+- Keep an unconfigured installation inert.
+- Use synthetic IDs and payloads in tests.
 
-5. Describe compatibility assumptions and routing/security impact in the pull request.
+## Development setup
 
-The plugin intentionally relies on internal Discord adapter methods. Changes should remain narrow and preserve unrelated channel behavior.
+Clone this repository and a compatible Hermes Agent checkout:
+
+```bash
+git clone https://github.com/vforge-labs/hermes-discord-thread-first-channels
+git clone https://github.com/NousResearch/hermes-agent
+cd hermes-discord-thread-first-channels
+python -m venv .venv
+. .venv/bin/activate
+python -m pip install --upgrade pip pytest ruff
+```
+
+Run the harness:
+
+```bash
+python -m pytest
+ruff check .
+```
+
+## Pull requests
+
+Include the Hermes commit(s) tested, tests added or updated, Discord adapter compatibility notes, and confirmation that fixtures contain synthetic data only.
