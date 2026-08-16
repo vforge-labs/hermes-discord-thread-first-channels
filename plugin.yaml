@@ -1,0 +1,11 @@
+name: hermes-discord-thread-first-channels
+version: "1.0.0"
+description: Mention-free Discord channels that still auto-create and continue threads.
+author: qsh
+homepage: https://github.com/vforge-labs/hermes-discord-thread-first-channels
+license: Apache-2.0
+tags:
+  - discord
+  - routing
+  - threads
+  - hermes-plugin

@@ -1,0 +1,15 @@
+[project]
+name = "hermes-discord-thread-first-channels"
+version = "1.0.0"
+description = "Mention-free Discord channels that retain Hermes auto-threading"
+requires-python = ">=3.11"
+license = { text = "Apache-2.0" }
+authors = [{ name = "vforge-coder" }]
+keywords = ["hermes", "discord", "threads", "routing", "plugin"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+target-version = "py311"
+line-length = 100
